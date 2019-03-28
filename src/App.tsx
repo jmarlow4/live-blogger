@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   public render() {
