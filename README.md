@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) but with a few additions, namely the use of tslint, prettier, and hot module reloading. To make HMR work without ejecting, we had to use [React App Rewired](https://github.com/timarney/react-app-rewired). For best results, use VSCode with the tslint and prettier extensions installed. This project also implements Husky and lint-staged to ensure linting occurs before code is committed and pushed up to the repo. This helps to ensure code quality by enforcing opinionated and idiomatic standards.
 
 ## Available Scripts
 
