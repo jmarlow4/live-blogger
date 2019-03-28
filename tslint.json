@@ -1,0 +1,25 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "rules": {
+    "prettier": true,
+    "interface-name": false,
+    "no-console": true,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "member-ordering": false,
+    "import-name": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "jsx-boolean-value": false,
+    "jsx-space-before-trailing-slash": true,
+    "jsx-alignment": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js",
+      "src/serviceWorker.ts"
+    ]
+  }
+}

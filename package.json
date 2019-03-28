@@ -1,22 +1,33 @@
 {
-  "name": "vurse-client",
+  "name": "react-ts-hmr-starter",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "lint-ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+  },
   "dependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-scripts": "2.1.8"
+  },
+  "devDependencies": {
     "@types/jest": "24.0.11",
     "@types/node": "11.12.0",
     "@types/react": "16.8.10",
     "@types/react-dom": "16.8.3",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-scripts": "2.1.8",
+    "prettier": "^1.16.4",
+    "react-app-rewire-hot-loader": "^2.0.1",
+    "react-app-rewired": "^2.1.1",
+    "react-hot-loader": "^4.8.0",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.0.0",
     "typescript": "3.3.4000"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
