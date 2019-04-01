@@ -15,7 +15,7 @@ class App extends Component<any, AppState> {
     isThemeLight: true,
   };
 
-  private onChange = () => {
+  private onDarkModeChange = () => {
     this.setState({ isThemeLight: !this.state.isThemeLight });
   };
 
@@ -33,37 +33,8 @@ class App extends Component<any, AppState> {
       <>
         <CssBaseline />
         <MuiThemeProvider theme={appTheme}>
-          <div className="lb-app" style={styles}>
-            <Navbar />
-            <Typography variant="h1" align="center" gutterBottom>
-              This is Heading Number 1
-            </Typography>
-            <Typography variant="h2" align="center" gutterBottom>
-              This is Heading Number 2
-            </Typography>
-            <Typography variant="h3" align="center" gutterBottom>
-              This is Heading Number 3
-            </Typography>
-            <Typography variant="h4" align="center" gutterBottom>
-              This is Heading Number 4
-            </Typography>
-            <Typography variant="h5" align="center" gutterBottom>
-              This is Heading Number 5
-            </Typography>
-            <Typography variant="h6" align="center" gutterBottom>
-              This is Heading Number 6
-            </Typography>
-            <div>
-              <Paper elevation={1}>
-                <Typography variant="h5">This is a sheet of paper.</Typography>
-                <Typography component="p">
-                  Paper can be used to build surface or other elements for your application.
-                </Typography>
-              </Paper>
-              <Button color="primary" variant="contained" onClick={this.onChange}>
-                Change theme
-              </Button>
-            </div>
+          <div style={styles}>
+            <Navbar darkModeToggle={this.onDarkModeChange} />
           </div>
         </MuiThemeProvider>
       </>

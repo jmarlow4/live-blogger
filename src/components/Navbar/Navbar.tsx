@@ -1,25 +1,29 @@
-import * as React from 'react';
+import React, { Component, createContext } from 'react';
 import {
   WithStyles,
   withStyles,
   AppBar,
   Toolbar,
   IconButton,
-  Icon,
   Typography,
   Menu,
   MenuItem,
 } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import InvertColors from '@material-ui/icons/InvertColors';
 import { navbarStyles } from './styles';
 
-export interface Props extends WithStyles<typeof navbarStyles> {}
+export interface Props extends WithStyles<typeof navbarStyles> {
+  darkModeToggle: () => void;
+}
 
 export interface State {
   isAuthenticated: boolean;
   anchorEl: null | HTMLElement;
 }
 
-class Navbar extends React.Component<Props, State> {
+class Navbar extends Component<Props, State> {
   public state = {
     isAuthenticated: false,
     anchorEl: null,
@@ -33,6 +37,10 @@ class Navbar extends React.Component<Props, State> {
     this.setState({ anchorEl: null });
   };
 
+  private toggleDarkMode = () => {
+    this.props.darkModeToggle();
+  };
+
   public render() {
     const { classes } = this.props;
     const { isAuthenticated, anchorEl } = this.state;
@@ -42,11 +50,16 @@ class Navbar extends React.Component<Props, State> {
       <AppBar position="static">
         <Toolbar className={classes.toolBar}>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <Icon>menu_icon</Icon>
+            <MenuIcon />
           </IconButton>
           <Typography variant="h5" color="inherit" className={classes.grow}>
             Live Blogger
           </Typography>
+          <div>
+            <IconButton onClick={this.toggleDarkMode} color="inherit">
+              <InvertColors />
+            </IconButton>
+          </div>
           {!isAuthenticated && (
             <div>
               <IconButton
@@ -54,7 +67,7 @@ class Navbar extends React.Component<Props, State> {
                 aria-haspopup="true"
                 onClick={this.handleMenu}
                 color="inherit">
-                <Icon>account_circle</Icon>
+                <AccountCircle />
               </IconButton>
               <Menu
                 id="menu-appbar"

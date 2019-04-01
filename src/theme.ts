@@ -7,8 +7,18 @@ const headingFont = 'Lora, serif';
 
 const baseTheme = {
   palette: {
-    primary: teal,
-    secondary: amber,
+    primary: {
+      light: '#63ccff',
+      main: '#039be5',
+      dark: '#026ca0',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff844c',
+      main: '#f4511e',
+      dark: '#b91400',
+      contrastText: '#fff',
+    },
     error: red,
     contrastThreshold: 3,
     tonalOffset: 0.2,
